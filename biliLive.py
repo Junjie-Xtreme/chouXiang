@@ -16,7 +16,7 @@ def get_live_status(uid):
     }
     resp = requests.get(url, headers=headers)
 
-    print("HTTP状态码:", resp.status_code)
+    print("\nHTTP状态码:", resp.status_code)
     print("原始响应:", resp.text[:1000])  # 截取前1000字符
 
     try:
@@ -40,7 +40,6 @@ def get_live_status(uid):
     else:
         print("⚠️ API 响应错误:", data)
 
-
 # 查询UID为 12345678（比如某位主播）
 get_live_status(518103295) #石林爱打斧
 
@@ -54,3 +53,44 @@ get_live_status(32731291) #Lisa的嘴
 
 get_live_status(36805011) #滴滴滴-滴滴滴是大白
 
+get_live_status(1888621682) #孤胆骑手小李
+
+get_live_status(46462447) #唐牛故事会
+
+get_live_status(375450192) #在花777
+
+get_live_status(1553366630) #地上足球直播号
+
+
+# resp.text[:1000]的JSON如下
+# {
+#   "code": 0,
+#   "msg": "success",
+#   "message": "success",
+#   "data": {
+#     "2071691173": {
+#       "title": "【预告】14日17点 TE vs ZETA",
+#       "room_id": 22908869,
+#       "uid": 2071691173,
+#       "online": 22774,
+#       "live_time": 1731912337,
+#       "live_status": 1,
+#       "short_id": 0,
+#       "area": 12,
+#       "area_name": "手游直播",
+#       "area_v2_id": 561,
+#       "area_v2_name": "游戏赛事",
+#       "area_v2_parent_name": "赛事",
+#       "area_v2_parent_id": 13,
+#       "uname": "无畏契约赛事",
+#       "face": "https://i1.hdslb.com/bfs/face/44ca2be4d17a8c7cd545fdc933808811151e20eb.jpg",
+#       "tag_name": "王者荣耀,碧蓝航线,崩坏3,阴阳师,Fate/GO,少女前线,ICHU,狼人杀,荒野行动,决战！平安京",
+#       "tags": "无畏契约赛事,瓦罗兰特赛事,东京大师赛,VCT,VCTCN,CQ,全球冠军赛",
+#       "cover_from_user": "https://i0.hdslb.com/bfs/live/def922b162b3685b6957722f34ca34ba7c1fdc53.jpg",
+#       "keyframe": "https://i0.hdslb.com/bfs/live-key-frame/keyframe05140032000022908869xeco0v.jpg",
+#       "lock_till": "0000-00-00 00:00:00",
+#       "hidden_till": "0000-00-00 00:00:00",
+#       "broadcast_type": 0
+#     }
+#   }
+# }
